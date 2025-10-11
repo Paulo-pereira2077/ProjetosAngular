@@ -1,3 +1,14 @@
-<h1>Olá {{nome}}!</h1>
- <h3>Bem-vindos ao angular!</h3>
- <router-outlet />
+<div>
+  <h1>{{ titulo }}</h1>
+  <p>{{ nome }}</p>
+  <button [disabled]="botaoDesabilitado" (click)="onbotaoClicado()">
+    {{ textoBotao }}
+  </button>
+
+  <button [disabled]="keypress" (click)="onKeyPressed()"></button>
+
+  @if(mensagem){
+    <div>{{mensagem}}</div>
+  }
+
+</div>
