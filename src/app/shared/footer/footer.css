@@ -1,0 +1,17 @@
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 0.9rem;
+  border-top: 2px solid #f0a500;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
