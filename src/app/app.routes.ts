@@ -3,14 +3,16 @@ import { Home } from './pages/home/home';
 import { PessoaLogin } from './pages/pessoa-login/pessoa-login';
 import { PessoaListagem } from './pages/pessoa-listagem/pessoa-listagem';
 import { PessoaForm } from './pages/pessoa-form/pessoa-form';
- 
+
+
+
 export const routes: Routes = [
- {
- path: '',
- component: Home,
- title: 'Home',
- },
- {
+    {
+        path: '',
+        component: Home,
+        title: 'Home',
+    },
+    {
         path: 'pessoas',
         component: PessoaListagem,
         title: 'Pessoas',

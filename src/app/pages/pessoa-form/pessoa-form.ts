@@ -1,27 +1,29 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { PessoaService } from '../../core/services/pessoa.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Pessoa } from '../../core/services/types/types';
-import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-pessoa-form',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './pessoa-form.html',
   styleUrl: './pessoa-form.css'
 })
-export class PessoaFormComponent {
+export class PessoaForm {
   titulo = 'Cadastro de Pessoas';
   pessoaId?: number;
+
   //Defino um objeto pessoa que será incluído ou alterado.
   pessoa: Pessoa = {} as Pessoa;
+
   constructor(
     private service: PessoaService,
     private router: Router,
     private route: ActivatedRoute
   ) {
-    //Verifico se é alteração 
+    //Verifico se é alteração ou inclusão
     this.pessoaId = Number(this.route.snapshot.params['id']);
     if (this.pessoaId) {
       service.buscarPorId(this.pessoaId).subscribe(pessoa => {
@@ -33,7 +35,7 @@ export class PessoaFormComponent {
         }
       })
     }
-  } //Fim do contrutor
+  }
 
   submeter() {
     if (this.pessoaId) {
@@ -45,6 +47,6 @@ export class PessoaFormComponent {
         this.router.navigate(['/pessoas'])
       })
     }
-  } //Fim do método submeter
+  }
 
 }
